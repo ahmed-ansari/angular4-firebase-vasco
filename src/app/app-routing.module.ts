@@ -11,10 +11,20 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 const routes: Routes = [
   {path:'edit-course/:id',component: EditCourseComponent},
   {path:'courses',component: CoursesComponent},
-  {path:'courses2',component: Courses2Component},
-  {path:'courses2/:id',component: Course2DetailComponent},
-  {path:'lessons/:id',component: LessonDetailComponent},
-  {path:'lessons',component: LessonsComponent},
+  {
+    path:'courses2',
+    children:[
+      {path:'', component: Courses2Component},
+      {path:':id',component: Course2DetailComponent},
+    ]
+  },  
+  {
+    path:'lessons',
+    children:[
+      {path:'',component: LessonsComponent},
+      {path:':id',component: LessonDetailComponent},
+    ]
+  },
   {path:'',pathMatch:'full',redirectTo:'courses'},
   {path:'**',component:ErrorComponent}
 ];
