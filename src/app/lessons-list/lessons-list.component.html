@@ -1,0 +1,11 @@
+<p>
+    lessons-list works!
+</p>
+
+<ul>
+    <li *ngFor="let l of lessons">
+        {{l.description}}
+
+        <button (click)="viewLesson(l)">View</button>
+    </li>
+</ul>

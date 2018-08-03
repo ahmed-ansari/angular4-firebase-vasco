@@ -1,0 +1,20 @@
+<p>
+    courses works!
+</p>
+
+<button (click)="addCourse()">Add Course</button>
+<br>
+<br>
+<!-- <fire-courses-list [courses]="courses$|async"></fire-courses-list> -->
+<br>
+<br>
+<div *ngIf="(courses$|async) as courses;else loading">
+    <ul>
+        <li *ngFor="let c of courses">{{c.text}}
+
+            <button (click)="editCourse(c)">Edit</button>
+            <button (click)="deleteCourse(c)">Delete</button>
+        </li>
+    </ul>
+</div>
+<ng-template #loading>fetching list...</ng-template>

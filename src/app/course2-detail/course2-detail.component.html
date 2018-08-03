@@ -1,0 +1,5 @@
+<p>Course 2 Detail works</p>
+
+Course Name: {{ (Course$ | async)?.description}}
+
+<fire-lessons-list [lessons]="lessons$ | async" (lessonClicked)="theLesson($event)"></fire-lessons-list>

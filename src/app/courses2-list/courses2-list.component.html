@@ -1,0 +1,9 @@
+<p>Courses 2 list works</p>
+<div *ngIf="courses;else loading">
+    <ul>
+        <li *ngFor="let c of courses">{{c.description}}
+            <button [routerLink]="c.url">View Lesson list </button>
+        </li>
+    </ul>
+</div>
+<ng-template #loading>fetching list...</ng-template>
